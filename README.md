@@ -67,3 +67,22 @@ var listExample = new Vue ({
   }
 })
 ```
+
+### method 
+methods property is where Vue apps store their instance methods. These methods can be used in many situations, such as helper functions used in other methods or event handlers (functions that are called in response to specific user interactions).
+
+```
+const app = new Vue({
+  el: "#app",
+  data: {
+    hoursStudied: 300
+  },
+  methods: {
+    resetProgress: function () {
+      this.hoursStudied = 0;
+    }
+  }
+});
+
+<button v-on:click="resetProgress">Reset Progress</button>
+```
