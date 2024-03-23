@@ -86,3 +86,63 @@ const app = new Vue({
 
 <button v-on:click="resetProgress">Reset Progress</button>
 ```
+
+### Dynamic Class
+
+* Object
+```
+   <ul>
+      <li v-for="item in items" :class="{strikeout: item.purchased}">{{ item.label }}</li> 
+    </ul>
+
+---
+
+items: [
+          {
+            label:'10 party hats',
+            purchased: false,
+            highPriority:false
+          },
+          {
+            label:'2 board games',
+            purchased:true,
+            highPriority:false
+          },{
+            label:'20 cups',
+            purchased:false,
+            highPriority:false
+          }
+]
+```
+
+
+* Array
+
+```
+    <ul>
+      <li v-for="item in items" :class="[item.purchased ? 'strikeout': '']">{{ item.label }}</li> 
+    </ul>
+
+---
+
+items: [
+          {
+            label:'10 party hats',
+            purchased: false,
+            highPriority:false
+          },
+          {
+            label:'2 board games',
+            purchased:true,
+            highPriority:false
+          },{
+            label:'20 cups',
+            purchased:false,
+            highPriority:false
+          }
+]
+
+```
+
+// change data use methods
+// change presentation of existing data use computed property
